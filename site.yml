@@ -1,0 +1,12 @@
+---
+
+- name: create, launch and configure our environment
+  hosts: localhost
+  connection: local
+  gather_facts: true
+
+  vars_files:
+    - group_vars/common.yml
+
+  roles:
+    - roles/resourcegroup
