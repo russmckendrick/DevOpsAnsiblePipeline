@@ -27,13 +27,13 @@ steps:
       echo "##vso[task.setvariable variable=ARM_TENANT_ID]${tenantId}"
 
 - script: pip install ansible
-  displayName: 'Install Ansible and the Azure modules'
+  displayName: 'Install Ansible'
 
 - script: pip install -r https://raw.githubusercontent.com/ansible-collections/azure/dev/requirements-azure.txt
-  displayName: 'Install Ansible and the Azure modules'
+  displayName: 'Install Azure modules needed'
 
 - script: ansible-galaxy collection install azure.azcollection
-  displayName: 'Install Ansible and the Azure modules'
+  displayName: 'Install Ansible Azure Collection'
   
 - script: ansible-playbook -i inv site.yml
   displayName: 'Run Ansible Playbook'
